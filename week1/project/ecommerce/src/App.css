@@ -1,0 +1,44 @@
+* {
+  padding-left: 3px;
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 0;
+}
+
+.item {
+  background-color: rgb(243, 240, 240);
+  padding: 8px;
+  cursor: pointer;
+  
+}
+
+.item:hover {
+  background-color: rgb(227, 226, 226);
+}
+
+.item.clicked {
+  background-color: grey;
+}
+
+.product-list{
+  display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.product-item{
+    list-style-type: none;
+    width: 30%;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
