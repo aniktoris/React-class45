@@ -7,19 +7,17 @@ export const CategoriesList = ({
   selectedCategory,
 }) => {
   return (
-    <>
-      <ul className="list">
-        {categories.map((category, index) => {
-          return (
-            <CategoryItem
-              key={index}
-              category={category}
-              handleClick={handleClick}
-              selectedCategory={selectedCategory}
-            />
-          );
-        })}
-      </ul>
-    </>
+    <ul className="list">
+      {categories.map((category, index) => {
+        return (
+          <CategoryItem
+            key={index}
+            category={category}
+            handleClick={handleClick}
+            selectedCategory={selectedCategory}
+          />
+        );
+      })}
+    </ul>
   );
 };

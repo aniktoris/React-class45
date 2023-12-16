@@ -3,25 +3,25 @@ import { ProductsList } from './components/ProductsList';
 import { CategoriesList } from './components/CategoriesList';
 import allProducts from './fake-data/all-products';
 import allCategories from './fake-data/all-categories';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 function App() {
   const [products, setProducts] = useState(allProducts);
-  const [originalProducts, setOriginalProducts] = useState(allProducts);
+  const [originalProducts] = useState(allProducts);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
-  useEffect(() => {
-    setOriginalProducts(allProducts);
-  }, []);
-
   const handleClick = (category) => {
-    setSelectedCategory(category === selectedCategory ? null : category);
-
     const filteredProducts = originalProducts.filter(
       (product) => category === `FAKE: ${product.category}`,
     );
 
-    setProducts(filteredProducts);
+    if (category === selectedCategory) {
+      setSelectedCategory(null);
+      setProducts(originalProducts);
+    } else {
+      setSelectedCategory(category);
+      setProducts(filteredProducts);
+    }
   };
 
   return (
