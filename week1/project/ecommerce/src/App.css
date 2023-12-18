@@ -11,7 +11,6 @@
   background-color: rgb(243, 240, 240);
   padding: 8px;
   cursor: pointer;
-  
 }
 
 .item:hover {
@@ -32,9 +31,34 @@
 .product-item{
     list-style-type: none;
     flex: 1;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.product-item p{
+  text-align: center;
+}
+
+.product-item img{
+  display: block;
+  margin: 0 auto;
 }
 
 img {
-  width: 300px;
-  height: 350px;
+  width: 250px;
+  height: 300px;
+}
+
+.item-details{
+  display: flex;
+}
+
+.item-details p{
+  margin-top: 15%;
+  width: 50%;
+}
+
+.item-details img, p{
+  display: block;
+  margin: 0 auto;
 }
