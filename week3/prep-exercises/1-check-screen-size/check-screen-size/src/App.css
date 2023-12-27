@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+header{
+  background-color: black;
+  color: hotpink;
+  font-size: 50px;
+  font-weight: bolder;
+  padding: 30px;
+}
+
+body{
+  background-color: lightpink;
+}
+
+.window-size{
+  font-size: 30px;
+  font-weight: bold;
+  padding: 30px;
+}
+
+.component{
+  width: 250px;
+  height: 250px;
+  padding-left: 200px;
+}
+
