@@ -7,9 +7,9 @@
  * - onSubmit -> This function will be called with an object containing the firstName, lastName and role that the user has filled in
  */
 
-import { useState } from "react";
+import { useState } from 'react';
 
-function UserDetailsForm({ initialUserValues, onSubmit }) {
+function UserDetailsForm(initialUserValues, { onSubmit }) {
   const [firstName, setFirstName] = useState(initialUserValues.firstName);
   const [lastName, setLastName] = useState(initialUserValues.lastName);
   const [role, setRole] = useState(initialUserValues.role);
