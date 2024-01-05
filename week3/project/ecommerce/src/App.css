@@ -33,6 +33,7 @@
     flex: 1;
     padding-top: 20px;
     padding-bottom: 40px;
+    position: relative;
 }
 
 .product-item p{
@@ -47,6 +48,19 @@
 img {
   width: 250px;
   height: 300px;
+  top: 0;
+  right: 0;
+}
+
+.icon, .icon-details {
+  width: 25px;
+  height: 50px;
+  padding-left: 200px;
+  position: absolute;
+}
+
+.icon-details {
+  padding-top: 100px;
 }
 
 .item-details{
@@ -62,3 +76,20 @@ img {
   display: block;
   margin: 0 auto;
 }
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+}
+
+.nav-list li {
+  margin: 7px;
+}
+
+

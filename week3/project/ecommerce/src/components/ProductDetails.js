@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router';
+import Heart from './Heart';
+import { GlobalContext } from '../context/GlobalState';
 
 export const ProductDetails = () => {
   const { id } = useParams();
@@ -14,6 +16,20 @@ export const ProductDetails = () => {
       );
   }, [id]);
 
+  const { favorites, addFavorites, deleteFavorites } =
+    useContext(GlobalContext);
+
+  const isFavorite = favorites.includes(parseInt(id));
+  const initialHeartState = isFavorite ? 'solid' : 'regular';
+
+  const handleFavoriteClick = () => {
+    if (isFavorite) {
+      deleteFavorites(parseInt(id));
+    } else {
+      addFavorites(parseInt(id));
+    }
+  };
+
   if (!product) {
     return <div>Loading...</div>;
   }
@@ -21,9 +37,14 @@ export const ProductDetails = () => {
   return (
     <li className="product-item">
       <h1>{product.title}</h1>
-      <div className='item-details'>
-      <p>{product.description}</p>
-      <img src={product.image} alt={product.title} />
+      <div className="item-details">
+        <p>{product.description}</p>
+        <img src={product.image} alt={product.title} />
+        <Heart
+          className="icon-details"
+          handleFavoriteClick={handleFavoriteClick}
+          initialHeartState={initialHeartState}
+        />
       </div>
     </li>
   );
